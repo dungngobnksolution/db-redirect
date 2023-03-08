@@ -1,0 +1,28 @@
+{
+    "name": "Odoo redirect",
+    "version": "1.0",
+    "manifest_version": 2,
+    "short_name": "Odoo redirect",
+    "description": "Redirect to odoo database manager",
+    "browser_action": {
+        "default_icon": "redirect.png"
+    },
+    "incognito": "spanning",
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "permissions": ["tabs"],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "contentScript.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        "pageScript.js"
+    ]
+}
